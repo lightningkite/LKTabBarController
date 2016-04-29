@@ -1,6 +1,0 @@
-framework module Pods_ButtonBar {
-  umbrella header "Pods-ButtonBar-umbrella.h"
-
-  export *
-  module * { export * }
-}
