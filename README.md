@@ -1,6 +1,9 @@
 # LKTabBarController
 
 [![Circle CI](https://circleci.com/gh/lightningkite/LKTabBarController.svg?style=svg)](https://circleci.com/gh/lightningkite/LKTabBarController)
+[![Version](https://img.shields.io/cocoapods/v/LKTabBarController.svg?style=flat)](http://cocoapods.org/pods/LKTabBarController)
+[![License](https://img.shields.io/cocoapods/l/LKTabBarController.svg?style=flat)](http://cocoapods.org/pods/LKTabBarController)
+[![Platform](https://img.shields.io/cocoapods/p/LKTabBarController.svg?style=flat)](http://cocoapods.org/pods/LKTabBarController)
 
 A simple tab bar controller for swift
 
