@@ -8,6 +8,21 @@
 
 Pod::Spec.new do |s|
 
+  s.name = "LKTabBarController"
+  s.version = "0.1.0"
+  s.summary = "A Simple tab bar controller"
+  s.description  = <<-DESC
+Super simple tab bar controller where the developer creates their own buttons and places a container view which holds the sub view controllers.
+  DESC
+  s.homepage = "https://github.com/lightningkite/LKTabBarController"
+  s.license = 'MIT'
+  s.author = { "Abraham Done" => "abraham@lightningkite.com" }
+  s.source = { :git => "https://github.com/lightningkite/LKTabBarController.git", :tag => "#{s.version}" }
+  s.platform = :ios, '8.0'
+  s.requires_arc = true
+  s.source_files = 'Pod/**/*'
+  s.frameworks = 'UIKit'
+
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  These will help people to find your library, and whilst it
@@ -15,20 +30,20 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "LKTabBarController"
-  s.version      = "0.1.0"
-  s.summary      = "A simple tab bar controller."
+# s.name         = "LKTabBarController"
+# s.version      = "0.1.0"
+# s.summary      = "A simple tab bar controller."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = <<-DESC
-Super simple tab bar controller where the developer creates their own buttons and places a container view which holds the sub view controllers.
-                   DESC
+# s.description  = <<-DESC
+# Super simple tab bar controller where the developer creates their own buttons and places a container view which holds the sub view controllers.
+#                  DESC
 
-  s.homepage     = "https://github.com/lightningkite/LKTabBarController"
+# s.homepage     = "https://github.com/lightningkite/LKTabBarController"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -40,7 +55,7 @@ Super simple tab bar controller where the developer creates their own buttons an
   #
 
   # s.license      = "MIT (example)"
-  s.license      = { :type => "MIT", :file => "LICENSE" }
+# s.license      = { :type => "MIT", :file => "LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -53,7 +68,7 @@ Super simple tab bar controller where the developer creates their own buttons an
   #  profile URL.
   #
 
-  s.author             = { "Abraham Done" => "abraham@lightningkite.com" }
+# s.author             = { "Abraham Done" => "abraham@lightningkite.com" }
   # Or just: s.author    = "Abraham Done"
   # s.authors            = { "Abraham Done" => "abraham@lightningkite.com" }
   # s.social_media_url   = "http://twitter.com/Abraham Done"
@@ -64,8 +79,8 @@ Super simple tab bar controller where the developer creates their own buttons an
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  s.platform     = :ios
-  s.platform     = :ios, "8.0"
+# s.platform     = :ios
+# s.platform     = :ios, "8.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
@@ -80,7 +95,7 @@ Super simple tab bar controller where the developer creates their own buttons an
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source = { :git => "https://github.com/lightningkite/LKTabBarController.git", :tag => "#{s.version}" }
+# s.source = { :git => "https://github.com/lightningkite/LKTabBarController.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -91,8 +106,8 @@ Super simple tab bar controller where the developer creates their own buttons an
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "LKTabBarController/LKTabBarController/**/*.{swift}"
-  s.exclude_files = "LKTabBarController/Example"
+# s.source_files  = "Pod/Classes/**/*"
+# s.exclude_files = "Example"
 
   # s.public_header_files = "Classes/**/*.h"
 
@@ -117,7 +132,7 @@ Super simple tab bar controller where the developer creates their own buttons an
   #  the lib prefix of their name.
   #
 
-  s.framework  = "UIKit"
+# s.framework  = "UIKit"
   # s.frameworks = "SomeFramework", "AnotherFramework"
 
   # s.library   = "iconv"
@@ -130,8 +145,8 @@ Super simple tab bar controller where the developer creates their own buttons an
   #  where they will only apply to your library. If you depend on other Podspecs
   #  you can include multiple dependencies to ensure it works.
 
-  s.requires_arc = true
-  s.depencency 'SnapKit'
+# s.requires_arc = true
+# s.dependency 'SnapKit', '~> 0.20.0'
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
