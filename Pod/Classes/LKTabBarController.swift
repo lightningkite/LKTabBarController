@@ -32,7 +32,7 @@ public protocol LKButtonBarIndexDelegate {
 }
 
 /**
-
+Simple controller for making a custom tab bar. The buttons are fully customizable, with a simple protocol to implement.
 */
 public class LKTabBarController: LKButtonBarIndexDelegate {
 	// MARK: - Properties
@@ -79,6 +79,10 @@ public class LKTabBarController: LKButtonBarIndexDelegate {
 	}
 	
 	// MARK: - LKButtonBarIndexDelegate implementation
+	/**
+	Function the button can call to change the tab to itself (or another index if desired).
+	- parameter index: The index to change
+	*/
 	public func buttonTapped(index: Int) {
 		if self.index != index {
 			self.index = index
