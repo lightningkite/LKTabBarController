@@ -14,12 +14,18 @@ class ButtonView: UIView, LKTabBarButtonView {
 
 	// required elements
 	@IBAction func buttonTapped() {
+		
+		// This is the action that will set the LKTabBarController's index and will change the view
 		delegate?.buttonTapped(index)
 	}
 	
+	// The button doesn't do anything to set these, just have them available for the tab bar to set up
+	// The delegate is set when it is set as a button/view pair in the LKTabBarController's init function
 	var delegate: LKButtonBarIndexDelegate?
+	// The index is also set up when it is initialized
 	var index: Int = 0
 	
+	// The actions that can happen when the button's state is changed by the LKTabBarController.
 	var selected: Bool = false {
 		didSet {
 			if selected {

@@ -11,6 +11,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+// simple example of a view that can have a stack of views
 class ListContentVC: UIViewController {
 
 	@IBOutlet weak var tableView: UITableView!

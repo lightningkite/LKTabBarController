@@ -11,21 +11,26 @@ import UIKit
 import LKTabBarController
 
 class ViewController: UIViewController {
-
+	// MARK: - Properties
+	var tabBarControll: LKTabBarController?
+	
+	// MARK: - IBOutlets
 	@IBOutlet weak var button1: ButtonView!
 	@IBOutlet weak var button2: ButtonView!
 	@IBOutlet weak var button3: ButtonView!
 	@IBOutlet weak var contentView: UIView!
 	
-	var tabBarControll: LKTabBarController?
-	
+	// MARK: - IBActions
 	@IBAction func backTapped() {
+		// pop the top view controller if there is one
 		tabBarControll?.popTopViewControllerAnimated()
 	}
 	
+	// MARK: - View lifecycle
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		// set up an array of button/view pairs
 		var buttons: [LKTabBarController.TabButtonViewPair] = []
 		
 		if let button1view = ButtonView.create("purple", color: UIColor.greenColor()) {
@@ -37,6 +42,7 @@ class ViewController: UIViewController {
 			buttons.append((button1view, view))
 		}
 		
+		// this is an example of a view that can have a sub view
 		if let button2view = ButtonView.create("list", color: UIColor.greenColor()) {
 			button2.addSubview(button2view)
 			

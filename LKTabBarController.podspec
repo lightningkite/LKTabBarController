@@ -20,7 +20,8 @@ Super simple tab bar controller where the developer creates their own buttons an
   s.source = { :git => "https://github.com/lightningkite/LKTabBarController.git", :tag => "#{s.version}" }
   s.platform = :ios, '8.0'
   s.requires_arc = true
-s.source_files = 'Pod/Classes/**/*'
+  s.dependency 'SnapKit', '~> 0.19.1'
+  s.source_files = 'Pod/Classes/**/*'
   s.frameworks = 'UIKit'
 
 end

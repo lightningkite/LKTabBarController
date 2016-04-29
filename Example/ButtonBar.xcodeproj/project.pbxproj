@@ -104,6 +104,41 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		7212D8991CD3F59A0024D173 /* LKTabBar Intraction */ = {
+			isa = PBXGroup;
+			children = (
+				723C0ECB1C9C4B6A0033687B /* ButtonView.swift */,
+				723C0E9F1C9C4B2A0033687B /* ViewController.swift */,
+			);
+			name = "LKTabBar Intraction";
+			path = "LKTabBar Interaction";
+			sourceTree = "<group>";
+		};
+		7212D89A1CD3F5CA0024D173 /* Otherstuff */ = {
+			isa = PBXGroup;
+			children = (
+				723C0E9D1C9C4B2A0033687B /* AppDelegate.swift */,
+				723C0ED31C9C4C230033687B /* ColorContentVC.swift */,
+				723C0ED51C9C4C380033687B /* ListContentVC.swift */,
+				723C0EDD1C9C55EB0033687B /* TableVC.swift */,
+				723C0EDB1C9C51F20033687B /* Xibs.swift */,
+			);
+			path = Otherstuff;
+			sourceTree = "<group>";
+		};
+		7212D89B1CD3F5F30024D173 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				723C0ECD1C9C4B7C0033687B /* ButtonView.xib */,
+				723C0ED71C9C4C480033687B /* ListContent.storyboard */,
+				723C0ED11C9C4C0B0033687B /* ColorContent.storyboard */,
+				723C0EA61C9C4B2A0033687B /* LaunchScreen.storyboard */,
+				723C0EA11C9C4B2A0033687B /* Main.storyboard */,
+				723C0EA41C9C4B2A0033687B /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		723C0E911C9C4B2A0033687B = {
 			isa = PBXGroup;
 			children = (
@@ -129,19 +164,9 @@
 		723C0E9C1C9C4B2A0033687B /* ButtonBar */ = {
 			isa = PBXGroup;
 			children = (
-				723C0E9D1C9C4B2A0033687B /* AppDelegate.swift */,
-				723C0ECB1C9C4B6A0033687B /* ButtonView.swift */,
-				723C0ECD1C9C4B7C0033687B /* ButtonView.xib */,
-				723C0ED31C9C4C230033687B /* ColorContentVC.swift */,
-				723C0ED11C9C4C0B0033687B /* ColorContent.storyboard */,
-				723C0ED51C9C4C380033687B /* ListContentVC.swift */,
-				723C0ED71C9C4C480033687B /* ListContent.storyboard */,
-				723C0EDD1C9C55EB0033687B /* TableVC.swift */,
-				723C0EDB1C9C51F20033687B /* Xibs.swift */,
-				723C0E9F1C9C4B2A0033687B /* ViewController.swift */,
-				723C0EA11C9C4B2A0033687B /* Main.storyboard */,
-				723C0EA41C9C4B2A0033687B /* Assets.xcassets */,
-				723C0EA61C9C4B2A0033687B /* LaunchScreen.storyboard */,
+				7212D8991CD3F59A0024D173 /* LKTabBar Intraction */,
+				7212D89A1CD3F5CA0024D173 /* Otherstuff */,
+				7212D89B1CD3F5F30024D173 /* Resources */,
 				723C0EA91C9C4B2A0033687B /* Info.plist */,
 			);
 			path = ButtonBar;
@@ -406,6 +431,7 @@
 				723C0EA21C9C4B2A0033687B /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		723C0EA61C9C4B2A0033687B /* LaunchScreen.storyboard */ = {
@@ -414,6 +440,7 @@
 				723C0EA71C9C4B2A0033687B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

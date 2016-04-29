@@ -62,8 +62,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="MLC-Lw-1Na" firstAttribute="leading" secondItem="Dhw-d1-JTV" secondAttribute="trailing" constant="8" id="5YE-di-Bca"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="oCD-rt-WRT" secondAttribute="trailing" constant="-20" id="7f4-q8-QY5"/>
-                            <constraint firstItem="oCD-rt-WRT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="BEN-az-3kt"/>
+                            <constraint firstAttribute="trailing" secondItem="oCD-rt-WRT" secondAttribute="trailing" id="7f4-q8-QY5"/>
+                            <constraint firstItem="oCD-rt-WRT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BEN-az-3kt"/>
                             <constraint firstItem="n8p-LX-4mm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Cu5-F9-eFy"/>
                             <constraint firstItem="4cW-BN-SLx" firstAttribute="leading" secondItem="MLC-Lw-1Na" secondAttribute="trailing" constant="8" id="EfZ-Yg-u5k"/>
                             <constraint firstItem="n8p-LX-4mm" firstAttribute="leading" secondItem="4cW-BN-SLx" secondAttribute="trailing" constant="8" id="Sjw-ID-3oY"/>
