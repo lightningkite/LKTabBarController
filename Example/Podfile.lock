@@ -1,10 +1,10 @@
 PODS:
-  - LKTabBarController (0.1.1):
-    - SnapKit (~> 0.19.1)
+  - LKTabBarController (0.1.2):
+    - SnapKit (~> 0.19)
   - RxCocoa (2.2.0):
     - RxSwift (~> 2.2)
   - RxSwift (2.2.0)
-  - SnapKit (0.19.1)
+  - SnapKit (0.20.0)
 
 DEPENDENCIES:
   - LKTabBarController (from `../`)
@@ -16,9 +16,9 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  LKTabBarController: e09a49074021f6cc2d896673b1136c771486a023
+  LKTabBarController: b2a4c195aec40c84abd78861163632170eba6a8b
   RxCocoa: 42efb7a7145a8d1d5878e94ce48a580d29e0c796
   RxSwift: b8a749f2204c6c7a5c29b306a9c3bc11d5b87c5b
-  SnapKit: eff58d6e3451bf2f482db2eccf86aecf371dc62d
+  SnapKit: 5fce3c1bbbf1fbd31de9aa92f33eb9fa03f15650
 
 COCOAPODS: 0.39.0
