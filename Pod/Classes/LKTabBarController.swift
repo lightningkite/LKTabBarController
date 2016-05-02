@@ -84,6 +84,10 @@ public class LKTabBarController: LKButtonBarIndexDelegate {
 	- parameter index: The index to change
 	*/
 	public func buttonTapped(index: Int) {
+		guard index >= 0 && index < buttonPairs.count else {
+			return
+		}
+		
 		if self.index != index {
 			self.index = index
 		}
@@ -100,7 +104,7 @@ public class LKTabBarController: LKButtonBarIndexDelegate {
 	/// The index of the views. It will only change the view to a view that is within the tab bar's range.
 	public var index: Int = 0 {
 		didSet {
-			if index > 0 && index < buttonPairs.count {
+			if index >= 0 && index < buttonPairs.count {
 				buttonTapped(index)
 			}
 		}
