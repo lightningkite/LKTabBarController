@@ -8,9 +8,6 @@
 
 import UIKit
 
-import RxSwift
-import RxCocoa
-
 class ColorContentVC: UIViewController {
 	
 	var color: UIColor = UIColor.blackColor()

@@ -3,13 +3,11 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'ButtonBar' do
-  pod 'RxSwift'
-  pod 'RxCocoa'
   pod 'LKTabBarController', :path => "../"
 end
 
 target 'ButtonBarTests' do
-
+  pod 'LKTabBarController', :path => "../"
 end
 
 target 'ButtonBarUITests' do
