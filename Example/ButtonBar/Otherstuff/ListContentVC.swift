@@ -8,27 +8,22 @@
 
 import UIKit
 
-import RxSwift
-import RxCocoa
-
 // simple example of a view that can have a stack of views
 class ListContentVC: UIViewController {
 
 	@IBOutlet weak var tableView: UITableView!
-	var list = Variable<[String]>(["Yellow", "Orange", "Black", "White"])
-	let disposeBag = DisposeBag()
+	var list = ["Yellow", "Orange", "Black", "White"]
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 
-		list.asObservable().bindTo(tableView.rx_itemsWithCellIdentifier("Cell", cellType: TableVC.self)) { row, str, cell in
-			cell.label.text = str
-		}.addDisposableTo(disposeBag)
+		tableView.delegate = self
+        tableView.dataSource = self
     }
 	
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-		if let dest = segue.destinationViewController as? ColorContentVC, index = tableView.indexPathForSelectedRow?.row where list.value.count > index {
-			switch list.value[index] {
+		if let dest = segue.destinationViewController as? ColorContentVC, index = tableView.indexPathForSelectedRow?.row where list.count > index {
+			switch list[index] {
 			case "Yellow":
 				dest.color = UIColor.yellowColor()
 			case "Orange":
@@ -40,4 +35,32 @@ class ListContentVC: UIViewController {
 			}
 		}
 	}
+}
+
+extension ListContentVC: UITableViewDelegate {
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        guard let cell = cell as? TableVC else {
+            return
+        }
+        
+        cell.label.text = list[indexPath.row]
+    }
+}
+
+extension ListContentVC: UITableViewDataSource {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return list.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as? TableVC {
+            return cell
+        }
+        
+        return UITableViewCell()
+    }
 }
