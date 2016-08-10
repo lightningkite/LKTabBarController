@@ -111,6 +111,15 @@ public class LKTabBarController: LKButtonBarIndexDelegate {
 	}
 	
 	// MARK: - Public facing view control
+    /// Clear all the tabs
+    public func clearTabs() {
+        containerView.subviews.forEach { subView in
+            subView.removeFromSuperview()
+        }
+        
+        buttonPairs = []
+    }
+    
 	/// The currently active view controller
 	public var navigationController: UINavigationController {
 		return self.buttonPairs[index].navController
