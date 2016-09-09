@@ -1,19 +1,28 @@
 PODS:
-  - LKTabBarController (0.1.5):
-    - SnapKit (~> 0.19)
-  - SnapKit (0.20.0)
+  - LKTabBarController (0.2.0):
+    - SnapKit
+  - SnapKit (0.40.0.beta4)
 
 DEPENDENCIES:
   - LKTabBarController (from `../`)
+  - SnapKit (from `https://github.com/SnapKit/SnapKit`, branch `feature/0.40.0`)
 
 EXTERNAL SOURCES:
   LKTabBarController:
     :path: ../
+  SnapKit:
+    :branch: feature/0.40.0
+    :git: https://github.com/SnapKit/SnapKit
+
+CHECKOUT OPTIONS:
+  SnapKit:
+    :commit: 2e4cebf41d8bd0833487381590ed90c38b9a2491
+    :git: https://github.com/SnapKit/SnapKit
 
 SPEC CHECKSUMS:
-  LKTabBarController: 5d636f21652e5f06707a1d88bfa341156bbe516c
-  SnapKit: 5fce3c1bbbf1fbd31de9aa92f33eb9fa03f15650
+  LKTabBarController: 972e4f0bd8d574c2c92cca3269e5b0a27bda8a63
+  SnapKit: 2eb32fcdca2206e611ef40d2650fe19b7469c91b
 
-PODFILE CHECKSUM: bc8ba7e8c7407eeaf84ad2f87c55e0f5fc9958fd
+PODFILE CHECKSUM: 8d5c7e1b433f8e9b43036ba7782318b94290ce64
 
 COCOAPODS: 1.0.1

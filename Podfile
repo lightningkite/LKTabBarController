@@ -1,6 +1,6 @@
-platform :ios, '8.0'
+platform :ios, '9.0'
 use_frameworks!
 
 target 'LKTabBarController' do
-  pod 'SnapKit'
+  pod 'SnapKit', :git => 'https://github.com/SnapKit/SnapKit', :branch => 'feature/0.40.0'
 end

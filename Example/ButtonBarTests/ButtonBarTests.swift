@@ -35,7 +35,7 @@ class ButtonBarTests: XCTestCase {
 	}
 	
 	func testIndex() {
-		guard let button1 = ButtonView.create("Test1", color: UIColor.redColor()), button2 = ButtonView.create("Test2", color: UIColor.blueColor()) else {
+		guard let button1 = ButtonView.create("Test1", color: UIColor.redColor()), let button2 = ButtonView.create("Test2", color: UIColor.blueColor()) else {
 			XCTAssert(false)
 			return
 		}
@@ -81,7 +81,7 @@ class ButtonBarTests: XCTestCase {
 	}
 	
 	func testButtonTapped() {
-		guard let button1 = ButtonView.create("Test1", color: UIColor.redColor()), button2 = ButtonView.create("Test2", color: UIColor.blueColor()) else {
+		guard let button1 = ButtonView.create("Test1", color: UIColor.redColor()), let button2 = ButtonView.create("Test2", color: UIColor.blueColor()) else {
 			XCTAssert(false)
 			return
 		}

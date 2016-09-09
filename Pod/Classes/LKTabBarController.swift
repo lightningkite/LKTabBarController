@@ -26,7 +26,7 @@ This is how the button can interact with the tab bar to change the index and to 
 */
 public protocol LKButtonBarIndexDelegate {
 	/// The action to take when the button bar was tapped. The index is the button's own index.
-	func buttonTapped(index: Int)
+	func buttonTapped(_ index: Int)
 	/// In case the button needs access to the index of the tab bar controller
 	var index: Int { get set }
 }
@@ -34,17 +34,17 @@ public protocol LKButtonBarIndexDelegate {
 /**
 Simple controller for making a custom tab bar. The buttons are fully customizable, with a simple protocol to implement.
 */
-public class LKTabBarController: LKButtonBarIndexDelegate {
+open class LKTabBarController: LKButtonBarIndexDelegate {
 	// MARK: - Properties
 	/// A button and view that will be paired together
 	public typealias TabButtonViewPair = (button: LKTabBarButtonView, viewController: UIViewController)
 	
-	private typealias TabButtonNavPair = (button: LKTabBarButtonView, navController: UINavigationController)
-	private var buttonPairs: [TabButtonNavPair]
+	fileprivate typealias TabButtonNavPair = (button: LKTabBarButtonView, navController: UINavigationController)
+	fileprivate var buttonPairs: [TabButtonNavPair]
 	
-	private let containerView: UIView
-	private let parentView: UIViewController
-	private let insets: UIEdgeInsets
+	fileprivate let containerView: UIView
+	fileprivate let parentView: UIViewController
+	fileprivate let insets: UIEdgeInsets
 	
 	/**
 	The initalizer for the tab bar controller
@@ -55,7 +55,7 @@ public class LKTabBarController: LKButtonBarIndexDelegate {
 	- parameter hideNavBar: Hide the internal navigation bar of the view controller, false by default
 	- parameter insets: Set the insets of all the tabbed views, UIEdgeInsetsZero by default
 	*/
-	public init(buttonPairs: [TabButtonViewPair], parentView: UIViewController, containerView: UIView, hideNavBar: Bool = true, insets: UIEdgeInsets = UIEdgeInsetsZero) {
+	public init(buttonPairs: [TabButtonViewPair], parentView: UIViewController, containerView: UIView, hideNavBar: Bool = true, insets: UIEdgeInsets = UIEdgeInsets.zero) {
 		
 		self.buttonPairs = []
 		self.parentView = parentView
@@ -65,7 +65,7 @@ public class LKTabBarController: LKButtonBarIndexDelegate {
 		for index in 0..<buttonPairs.count {
 			let view = buttonPairs[index].viewController
 			let navController = UINavigationController(rootViewController: view)
-			navController.navigationBarHidden = hideNavBar
+			navController.isNavigationBarHidden = hideNavBar
 			
 			var button = buttonPairs[index].button
 			button.index = index
@@ -83,7 +83,7 @@ public class LKTabBarController: LKButtonBarIndexDelegate {
 	Function the button can call to change the tab to itself (or another index if desired).
 	- parameter index: The index to change
 	*/
-	public func buttonTapped(index: Int) {
+	open func buttonTapped(_ index: Int) {
 		guard index >= 0 && index < buttonPairs.count else {
 			return
 		}
@@ -112,7 +112,7 @@ public class LKTabBarController: LKButtonBarIndexDelegate {
 	
 	// MARK: - Public facing view control
     /// Clear all the tabs
-    public func clearTabs() {
+    open func clearTabs() {
         containerView.subviews.forEach { subView in
             subView.removeFromSuperview()
         }
@@ -138,42 +138,42 @@ public class LKTabBarController: LKButtonBarIndexDelegate {
 	}
 	
 	/// Pop the currently active tab view's view controller
-	public func popTopViewControllerAnimated(animated: Bool = true) {
+	open func popTopViewControllerAnimated(_ animated: Bool = true) {
 		let navControl = self.buttonPairs[index].navController
-		navControl.popViewControllerAnimated(animated)
+		navControl.popViewController(animated: animated)
 	}
 	
 	/// Pop the currently active tab view to its root controller
-	public func popTopViewControllerToRootAnimated(animated: Bool = true) {
+	open func popTopViewControllerToRootAnimated(_ animated: Bool = true) {
 		let navControl = self.buttonPairs[index].navController
-		navControl.popToRootViewControllerAnimated(animated)
+		navControl.popToRootViewController(animated: animated)
 	}
 	
 	// MARK: - Private functions (set active view)
-	private var activeViewController: UIViewController? {
+	fileprivate var activeViewController: UIViewController? {
 		didSet {
 			removeInactiveViewController(oldValue)
 			updateActiveViewController()
 		}
 	}
 	
-	private func removeInactiveViewController(inactiveViewController: UIViewController?) {
-		if parentView.isViewLoaded() {
+	fileprivate func removeInactiveViewController(_ inactiveViewController: UIViewController?) {
+		if parentView.isViewLoaded {
 			if let inActiveVC = inactiveViewController {
-				inActiveVC.willMoveToParentViewController(nil)
+				inActiveVC.willMove(toParentViewController: nil)
 				inActiveVC.view.removeFromSuperview()
 				inActiveVC.removeFromParentViewController()
 			}
 		}
 	}
 	
-	private func updateActiveViewController() {
-		if parentView.isViewLoaded() {
+	fileprivate func updateActiveViewController() {
+		if parentView.isViewLoaded {
 			if let activeVC = activeViewController {
 				parentView.addChildViewController(activeVC)
 				activeVC.view.frame = containerView.bounds
 				containerView.addSubview(activeVC.view)
-				activeVC.didMoveToParentViewController(parentView)
+				activeVC.didMove(toParentViewController: parentView)
 				
 				activeVC.view.snp_makeConstraints { make in
 					make.edges.equalTo(containerView).inset(self.insets)
