@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name = "LKTabBarController"
-  s.version = "0.2.0"
+  s.version = "0.3.0"
   s.summary = "A Simple tab bar controller"
   s.description  = <<-DESC
 Super simple tab bar controller where the developer creates their own buttons and places a container view which holds the sub view controllers.
