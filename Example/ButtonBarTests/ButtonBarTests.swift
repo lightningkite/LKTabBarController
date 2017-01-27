@@ -15,7 +15,7 @@ import LKTabBarController
 class ButtonBarTests: XCTestCase {
 	
 	func testButtonView() {
-		guard let testButton = ButtonView.create("Testable", color: UIColor.blueColor()) else {
+		guard let testButton = ButtonView.create("Testable", color: UIColor.blue) else {
 			XCTAssert(false)
 			return
 		}
@@ -25,17 +25,17 @@ class ButtonBarTests: XCTestCase {
 		
 		testButton.selected = true
 		XCTAssert(testButton.selected)
-		XCTAssert(testButton.colorBar.backgroundColor == UIColor.blueColor())
-		XCTAssertFalse(testButton.button.enabled)
+		XCTAssert(testButton.colorBar.backgroundColor == UIColor.blue)
+		XCTAssertFalse(testButton.button.isEnabled)
 		
 		testButton.selected = false
 		XCTAssertFalse(testButton.selected)
-		XCTAssert(testButton.colorBar.backgroundColor == UIColor.grayColor())
-		XCTAssert(testButton.button.enabled)
+		XCTAssert(testButton.colorBar.backgroundColor == UIColor.gray)
+		XCTAssert(testButton.button.isEnabled)
 	}
 	
 	func testIndex() {
-		guard let button1 = ButtonView.create("Test1", color: UIColor.redColor()), button2 = ButtonView.create("Test2", color: UIColor.blueColor()) else {
+		guard let button1 = ButtonView.create("Test1", color: UIColor.red), let button2 = ButtonView.create("Test2", color: UIColor.blue) else {
 			XCTAssert(false)
 			return
 		}
@@ -81,7 +81,7 @@ class ButtonBarTests: XCTestCase {
 	}
 	
 	func testButtonTapped() {
-		guard let button1 = ButtonView.create("Test1", color: UIColor.redColor()), button2 = ButtonView.create("Test2", color: UIColor.blueColor()) else {
+		guard let button1 = ButtonView.create("Test1", color: UIColor.red), let button2 = ButtonView.create("Test2", color: UIColor.blue) else {
 			XCTAssert(false)
 			return
 		}

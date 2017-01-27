@@ -33,7 +33,7 @@ class ViewController: UIViewController {
 		// set up an array of button/view pairs
 		var buttons: [LKTabBarController.TabButtonViewPair] = []
 		
-		if let button1view = ButtonView.create("purple", color: UIColor.greenColor()) {
+		if let button1view = ButtonView.create("purple", color: UIColor.green) {
 			button1.addSubview(button1view)
 			
 			let view = UIStoryboard(name: "ColorContent", bundle: nil).instantiateInitialViewController() as! ColorContentVC
@@ -43,7 +43,7 @@ class ViewController: UIViewController {
 		}
 		
 		// this is an example of a view that can have a sub view
-		if let button2view = ButtonView.create("list", color: UIColor.greenColor()) {
+		if let button2view = ButtonView.create("list", color: UIColor.green) {
 			button2.addSubview(button2view)
 			
 			let view = UIStoryboard(name: "ListContent", bundle: nil).instantiateInitialViewController()
@@ -51,7 +51,7 @@ class ViewController: UIViewController {
 			buttons.append((button2view, view!))
 		}
 		
-		if let button3view = ButtonView.create("blue", color: UIColor.greenColor()) {
+		if let button3view = ButtonView.create("blue", color: UIColor.green) {
 			button3.addSubview(button3view)
 			
 			let view = UIStoryboard(name: "ColorContent", bundle: nil).instantiateInitialViewController() as! ColorContentVC

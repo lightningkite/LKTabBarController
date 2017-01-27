@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name = "LKTabBarController"
-  s.version = "0.1.6"
+  s.version = "1.0.0"
   s.summary = "A Simple tab bar controller"
   s.description  = <<-DESC
 Super simple tab bar controller where the developer creates their own buttons and places a container view which holds the sub view controllers.
@@ -20,7 +20,7 @@ Super simple tab bar controller where the developer creates their own buttons an
   s.source = { :git => "https://github.com/lightningkite/LKTabBarController.git", :tag => "#{s.version}" }
   s.platform = :ios, '8.0'
   s.requires_arc = true
-  s.dependency 'SnapKit', '~> 0.19'
+  s.dependency 'SnapKit'
   s.source_files = 'Pod/Classes/**/*'
   s.frameworks = 'UIKit'
 

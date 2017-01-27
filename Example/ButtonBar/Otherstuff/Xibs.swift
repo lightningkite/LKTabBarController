@@ -9,16 +9,16 @@
 import UIKit
 
 extension UIView {
-	class func view(nib: UINib?) -> AnyObject? {
-		guard let nib = nib?.instantiateWithOwner(nil, options: nil).first where nib.isKindOfClass(self) else {
+	class func view(_ nib: UINib?) -> AnyObject? {
+		guard let nib = nib?.instantiate(withOwner: nil, options: nil).first, (nib as AnyObject).isKind(of: self) else {
 			return nil
 		}
 		
-		return nib
+		return nib as AnyObject?
 	}
 	
 	class func nib() -> UINib? {
-		let bundle = NSBundle(forClass: self)
+		let bundle = Bundle(for: self)
 		guard let name = nibName() else { return nil }
 		return UINib(nibName: name, bundle: bundle)
 	}
@@ -33,7 +33,7 @@ extension UIView {
 	
 	class func className() -> String? {
 		let name = NSStringFromClass(self)
-		return name.componentsSeparatedByString(".").last
+		return name.components(separatedBy: ".").last
 	}
 }
 

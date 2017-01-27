@@ -21,24 +21,24 @@ class ListContentVC: UIViewController {
         tableView.dataSource = self
     }
 	
-	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-		if let dest = segue.destinationViewController as? ColorContentVC, index = tableView.indexPathForSelectedRow?.row where list.count > index {
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let dest = segue.destination as? ColorContentVC, let index = (tableView.indexPathForSelectedRow as NSIndexPath?)?.row, list.count > index {
 			switch list[index] {
 			case "Yellow":
-				dest.color = UIColor.yellowColor()
+				dest.color = UIColor.yellow
 			case "Orange":
-				dest.color = UIColor.orangeColor()
+				dest.color = UIColor.orange
 			case "Black":
-				dest.color = UIColor.blackColor()
+				dest.color = UIColor.black
 			default:
-				dest.color = UIColor.whiteColor()
+				dest.color = UIColor.white
 			}
 		}
 	}
 }
 
 extension ListContentVC: UITableViewDelegate {
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard let cell = cell as? TableVC else {
             return
         }
@@ -48,16 +48,16 @@ extension ListContentVC: UITableViewDelegate {
 }
 
 extension ListContentVC: UITableViewDataSource {
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as? TableVC {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as? TableVC {
             return cell
         }
         

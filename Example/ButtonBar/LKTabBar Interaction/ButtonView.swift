@@ -29,13 +29,13 @@ class ButtonView: UIView, LKTabBarButtonView {
 	var selected: Bool = false {
 		didSet {
 			if selected {
-				button.setTitleColor(self.color, forState: .Normal)
-				button.enabled = false
+				button.setTitleColor(self.color, for: UIControlState())
+				button.isEnabled = false
 				colorBar.backgroundColor = self.color
 			} else {
-				button.setTitleColor(UIColor.grayColor(), forState: .Normal)
-				button.enabled = true
-				colorBar.backgroundColor = UIColor.grayColor()
+				button.setTitleColor(UIColor.gray, for: UIControlState())
+				button.isEnabled = true
+				colorBar.backgroundColor = UIColor.gray
 			}
 		}
 	}
@@ -44,14 +44,14 @@ class ButtonView: UIView, LKTabBarButtonView {
 	@IBOutlet weak var button: UIButton!
 	@IBOutlet weak var colorBar: UIView!
 	
-	var color = UIColor.blueColor()
+	var color = UIColor.blue
 	
-	class func create(title: String, color: UIColor) -> ButtonView? {
+	class func create(_ title: String, color: UIColor) -> ButtonView? {
 		guard let view = ButtonView.view(ButtonView.nib()) as? ButtonView else {
 			return nil
 		}
 		
-		view.button.setTitle(title, forState: .Normal)
+		view.button.setTitle(title, for: UIControlState())
 		view.color = color
 		
 		return view

@@ -10,7 +10,7 @@ import UIKit
 
 class ColorContentVC: UIViewController {
 	
-	var color: UIColor = UIColor.blackColor()
+	var color: UIColor = UIColor.black
 		
     override func viewDidLoad() {
         super.viewDidLoad()
